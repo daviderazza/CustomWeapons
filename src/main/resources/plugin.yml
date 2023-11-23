@@ -1,0 +1,8 @@
+name: CustomWeapons
+version: '${project.version}'
+main: me.redyt008.customweapons.CustomWeapons
+author: Davide Razza (redyt008)
+commands:
+  FireSword:
+    description: Ottieni la leggendaria Lama Di Fuoco
+    usage: /<command>
