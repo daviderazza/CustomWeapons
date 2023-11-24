@@ -1,5 +1,6 @@
 package me.redyt008.customweapons.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,10 +20,10 @@ public class FireSword implements CommandExecutor {
             Player player = (Player) commandSender;
             ItemStack fireSword = new ItemStack(Material.DIAMOND_SWORD);
             ItemMeta fireSwordMeta = fireSword.getItemMeta();
-            fireSwordMeta.setDisplayName("Lama Di Fuoco");
+            fireSwordMeta.setDisplayName(ChatColor.RED + "Lama Di Fuoco");
             List list = new ArrayList<String>();
-            list.add("Questa e' la leggendaria lama di fuoco");
-            list.add("Tienila in mano per ricevere i suoi effetti!");
+            list.add(ChatColor.RED + "Questa è la leggendaria Lama di Fuoco");
+            list.add(ChatColor.RED + "Click sinistro per ricevere i suoi effetti!");
             fireSwordMeta.setLore(list);
             fireSword.setItemMeta(fireSwordMeta);
             player.getInventory().addItem(fireSword);
@@ -34,7 +35,7 @@ public class FireSword implements CommandExecutor {
         ItemStack itemInMainHand = player.getInventory().getItemInMainHand();
         if(itemInMainHand.getItemMeta() != null){
             if(itemInMainHand.getItemMeta().getDisplayName() != null){
-                return itemInMainHand.getItemMeta().getDisplayName().equals("Lama Di Fuoco");
+                return itemInMainHand.getItemMeta().getDisplayName().equals(ChatColor.RED + "Lama Di Fuoco");
             }
             return false;
         }
