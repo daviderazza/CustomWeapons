@@ -6,3 +6,6 @@ commands:
   FireSword:
     description: Ottieni la leggendaria Lama Di Fuoco
     usage: /<command>
+  WaterSword:
+    description: Ottieni la leggendaria Lama D'Acqua
+    usage: /<command>
