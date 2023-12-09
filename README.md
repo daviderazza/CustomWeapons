@@ -1,3 +1,3 @@
 This is a plugin that adds custom sword for Minecraft: Java Edition. Right now I have only added a sword but more will be added in the future.
 Stay Tuned!
-/!\ WARNING The plugin is still in an early-stage so expect to find some bugs and some test class and methods WARNING /!\
+
