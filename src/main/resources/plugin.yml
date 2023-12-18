@@ -9,3 +9,6 @@ commands:
   WaterSword:
     description: Ottieni la leggendaria Lama D'Acqua
     usage: /<command>
+  cwShop:
+    description: Apri lo shop delle armi custom!
+    usage: /<command>
