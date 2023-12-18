@@ -26,7 +26,11 @@ public class FireSword implements CommandExecutor {
             list.add(ChatColor.RED + "Click sinistro per ricevere i suoi effetti!");
             fireSwordMeta.setLore(list);
             fireSword.setItemMeta(fireSwordMeta);
-            player.getInventory().addItem(fireSword);
+            if(player.hasPermission("customweapons.firesword")){
+                player.getInventory().addItem(fireSword);
+            }else{
+                player.sendMessage(ChatColor.RED + "Non hai accesso a quel comando");
+            }
         }
         return true;
     }

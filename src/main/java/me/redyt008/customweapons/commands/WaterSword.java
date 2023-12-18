@@ -25,7 +25,11 @@ public class WaterSword implements CommandExecutor {
             list.add(ChatColor.RED + "Click sinistro per ricevere i suoi effetti!");
             waterSwordMeta.setLore(list);
             waterSword.setItemMeta(waterSwordMeta);
-            player.getInventory().addItem(waterSword);
+            if(player.hasPermission("customweapons.watersword")){
+                player.getInventory().addItem(waterSword);
+            }else{
+                player.sendMessage(ChatColor.RED + "Non hai accesso a quel comando");
+            }
         }
         return true;
     }
