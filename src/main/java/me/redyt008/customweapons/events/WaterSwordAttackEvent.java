@@ -1,6 +1,6 @@
 package me.redyt008.customweapons.events;
 
-import me.redyt008.customweapons.commands.FireSword;
+import me.redyt008.customweapons.commands.WaterSword;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -11,9 +11,9 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class FireSwordAttackEvent implements Listener {
+public class WaterSwordAttackEvent implements Listener {
 
-    private final FireSword fireSword = new FireSword();
+    private final WaterSword waterSword = new WaterSword();
     @EventHandler
     public void PlayerAttackEvent(EntityDamageByEntityEvent event) {
         Entity damager = event.getDamager();
@@ -22,18 +22,17 @@ public class FireSwordAttackEvent implements Listener {
         if (damagerType == EntityType.PLAYER) {
             Player player = (Player) damager;
             player.sendMessage("Event 1 passed");
-            if (player.getInventory().getItemInMainHand().getItemMeta() != null) {
+            if(player.getInventory().getItemInMainHand().getItemMeta() != null) {
                 player.sendMessage("Event 2 passed");
-                if (player.getInventory().getItemInMainHand().getItemMeta().getDisplayName() != null) {
+                if(player.getInventory().getItemInMainHand().getItemMeta().getDisplayName() != null) {
                     player.sendMessage("Event 3 passed");
-                    if(fireSword.fireInHand(player)){
+                    if(waterSword.waterInHand(player)){
                         player.sendMessage("Event 4 passed");
                         Location location = entity.getLocation();
                         World world = entity.getWorld();
-                        PotionEffect potionEffect = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 200, 155);
+                        PotionEffect potionEffect = new PotionEffect(PotionEffectType.WATER_BREATHING, 200, 155);
                         player.addPotionEffect(potionEffect);
-                        world.getBlockAt(location).setType(Material.FIRE);
-                        entity.getWorld().spawnParticle(Particle.LAVA, entity.getLocation(), 20);
+                        entity.getWorld().spawnParticle(Particle.WATER_SPLASH, entity.getLocation(), 40);
                     }
                 }
             }

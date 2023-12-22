@@ -28,7 +28,17 @@ public class cwShop implements CommandExecutor {
             list.add("Prezzo: 15.000");
             fireswordmeta.setLore(list);
             firesword.setItemMeta(fireswordmeta);
-            inventory.setItem(10, firesword);
+            inventory.setItem(11, firesword);
+
+            ItemStack watersword = new ItemStack(Material.DIAMOND_SWORD);
+            ItemMeta waterswordmeta = watersword.getItemMeta();
+            waterswordmeta.setDisplayName(ChatColor.AQUA + "WaterSword");
+            List list1 = new ArrayList<String>();
+            list1.add(ChatColor.AQUA + "Lama D'Acqua");
+            list1.add(ChatColor.AQUA + "Prezzo: 45.000");
+            waterswordmeta.setLore(list1);
+            watersword.setItemMeta(waterswordmeta);
+            inventory.setItem(15, watersword);
             if(player.hasPermission("customweapons.cwshop")){
                 player.openInventory(inventory);
             }else{
