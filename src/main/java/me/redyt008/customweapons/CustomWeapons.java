@@ -23,6 +23,7 @@ public final class CustomWeapons extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FireBlock(), this);
         getServer().getPluginManager().registerEvents(new WaterBlock(), this);
         getServer().getPluginManager().registerEvents(new WaterAir(), this);
+        getServer().getPluginManager().registerEvents(new FireSwordAttackEvent(), this);
     }
 
     @Override
