@@ -25,7 +25,7 @@ public class WaterBlock implements Listener {
                 player.sendMessage(ChatColor.GREEN + "Event Passed");
                 PotionEffect potionEffect = new PotionEffect(PotionEffectType.WATER_BREATHING, 200, 155);
                 player.addPotionEffect(potionEffect);
-                player.getWorld().spawnParticle(Particle.WATER_BUBBLE, player.getLocation(), 20);
+                player.getWorld().spawnParticle(Particle.WATER_SPLASH, player.getLocation(), 40);
             }
         }
     }

@@ -19,10 +19,10 @@ public class WaterSword implements CommandExecutor {
             Player player = (Player) commandSender;
             ItemStack waterSword = new ItemStack(Material.DIAMOND_SWORD);
             ItemMeta waterSwordMeta = waterSword.getItemMeta();
-            waterSwordMeta.setDisplayName(ChatColor.RED + "Lama D'Acqua");
+            waterSwordMeta.setDisplayName(ChatColor.AQUA + "Lama D'Acqua");
             List list = new ArrayList<String>();
-            list.add(ChatColor.RED + "Questa è la leggendaria Lama d'Acqua");
-            list.add(ChatColor.RED + "Click sinistro per ricevere i suoi effetti!");
+            list.add(ChatColor.AQUA + "Questa è la leggendaria Lama d'Acqua");
+            list.add(ChatColor.AQUA + "Click sinistro per ricevere i suoi effetti!");
             waterSwordMeta.setLore(list);
             waterSword.setItemMeta(waterSwordMeta);
             if(player.hasPermission("customweapons.watersword")){
@@ -37,7 +37,7 @@ public class WaterSword implements CommandExecutor {
         ItemStack itemInMainHand = player.getInventory().getItemInMainHand();
         if(itemInMainHand.getItemMeta() != null){
             if(itemInMainHand.getItemMeta().getDisplayName() != null){
-                return itemInMainHand.getItemMeta().getDisplayName().equals(ChatColor.RED + "Lama D'Acqua");
+                return itemInMainHand.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.AQUA + "Lama D'Acqua");
             }
             return false;
         }
