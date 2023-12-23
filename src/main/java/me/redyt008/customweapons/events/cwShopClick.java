@@ -6,12 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
-import org.bukkit.inventory.ItemStack;
 
 public class cwShopClick implements Listener {
-
-    static  final cwShop cwshop = new cwShop();
 
     @EventHandler
     public void onClick(InventoryClickEvent event){
